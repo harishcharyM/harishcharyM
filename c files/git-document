@@ -1,0 +1,80 @@
+# Git Document 
+
+
+
+1) Create the account 
+	--> https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
+	
+2) Create repository
+	--> Click on + icon 
+	--> click on New repository
+	--> <repository name>
+	--> create repository
+	
+3) clone Repository
+	--> click on Repositories
+	--> open the Repository (which you want to clone )
+	--> click on the code (Green colour )
+	--> copy the http link
+	--> git clone <paste the link> (in terminal)
+	
+4) Generate the SSH Key 
+	--> on terminal
+	--> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+	--> Enter passphrase: (give any <filename>)
+	--> eval "$(ssh-agent -s)"
+	--> open the <filename.pub>
+	--> copy the content
+
+5) Adding the ssh key to github
+	--> login to github
+	--> click on the profile --> settings --> SSH and GPG keys --> new SSH key 
+	--> paste the content (copied from <filename.pub>)
+	--> Add SSH key
+6) Generate the personal access token to push
+	--> https://github.com/settings/tokens
+	--> click on Generate new token
+	--> give permissions --> click on generate token -->
+	--> copy the generated token and save in file.(This is used as a password to push to git) 
+7) Push to Git
+
+	--> git add . (if new files added )
+	--> git commit -m "description"
+	--> git push origin <branch>
+	--> username <git user name >
+	--> password < token which you generated (refer 6.4)>
+	--> open the github and refresh you will able to see the repository 
+
+8) Creating Branch
+	--> git checkout -b <branch-name> ( create the branch)
+	--> git branch (to check you are in which branch)
+	--> git checkout <branch-name> (you switch between branches)
+	--> git merge <branch-name> ( to merge the branches )
+	--> git pull (to see the updations after merging )
+	--> git reset (undo for git add) 
+	--> git reset HEAD~1 (undo for git commit )( 1 means one previous)
+	--> git reset <commit-id> (to get commit id do -> git log)
+	--> git rest --hard <commit-id> (to apply the changes )
+	
+	
+9) Fork 
+	--> if you want to copy the repository from diff account --> goto the repository from which account you want to copy 
+	--> click on fork -->  click on Create Fork .
+	
+10) Git commands 
+	--> git init
+	--> git add README.md
+	--> git branch -M main
+	--> git remote add origin https://github.com/harishcharyM/harishcharyM.git
+	--> git push -u origin main
+	
+	
+11) Git Links 
+	--> https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository
+	
+	--> https://docs.github.com/en/repositories
+================================== Thank You =====================================
+================================= Harishchary ==================================== 
+
+12) personal token :   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
+	
