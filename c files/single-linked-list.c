@@ -1,4 +1,11 @@
-/* swap node not working properly need to update */
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <stdio.h>
 #include<stdlib.h>
 
@@ -56,7 +63,8 @@ void swap_node()
     struct node *prev = head;
     struct node *curr = head->next;
     struct node *temp = NULL;
-    while((prev->next != NULL)&(curr->next != NULL))
+    struct node *p = head;
+    while((prev != NULL)&(curr != NULL))
     {
         
         temp = prev;
@@ -65,15 +73,22 @@ void swap_node()
         if(curr == head)
         {
             head = prev;
+            temp = prev->next;
+            prev->next = curr;
+            curr->next = temp;
         }
-        temp = prev->next;
-        prev->next = curr;
-        curr->next = temp;
+        else
+        {
+            temp = prev->next;
+            prev->next = curr;
+            curr->next = temp;
+            head->next->next = prev;
+        }
+        
         if((prev->next == NULL)|(curr->next == NULL)) break;
         prev = prev->next->next;
         curr = curr->next->next;
     }
-    printf("\n2");
 }
 void reverse_print(struct node *h)
 {
